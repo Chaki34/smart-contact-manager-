@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base :: layout(~{::section})}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+
+
+</head>
+<body>
+<section class="py-5 bg-light" id="home">
+    <div class="container">
+        <div class="row align-items-center">
+
+            <!-- Text Content -->
+            <div class="col-md-7">
+                <h1 class="fw-bold mb-3">
+                    Welcome to <span class="text-primary">Smart Contact Manager</span>
+                </h1>
+
+                <p class="lead">
+                    Organize, manage and access your contacts securely — anytime, anywhere.
+                    Keep your professional & personal network in one smart dashboard.
+                </p>
+
+                <div class="mt-4">
+                    <a href="/login" class="btn btn-primary px-4 me-2">Get Started</a>
+                    <a href="/register" class="btn btn-outline-primary px-4">Create Account</a>
+                </div>
+            </div>
+
+            <!-- Illustration -->
+            <div class="col-md-5 text-center mt-4 mt-md-0">
+                <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png"
+                     alt="Contact Manager Illustration"
+                     class="img-fluid"
+                     style="max-height: 280px;">
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- end of home section -->
+
+<!-- features section -->
+
+<section class="py-5" id="features">
+    <div class="container">
+
+        <div class="text-center mb-4">
+            <h2 class="fw-bold">Powerful Features</h2>
+            <p class="text-muted">
+                Smart tools to manage your contacts efficiently
+            </p>
+        </div>
+
+        <div class="row g-4">
+
+            <!-- Feature 1 -->
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm h-100 p-3">
+                    <h5 class="fw-bold">Secure Contact Storage</h5>
+                    <p class="small mb-0">
+                        All your contacts are encrypted and stored safely in the cloud.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm h-100 p-3">
+                    <h5 class="fw-bold">Smart Categorization</h5>
+                    <p class="small mb-0">
+                        Group contacts by work, personal, clients, or custom tags.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm h-100 p-3">
+                    <h5 class="fw-bold">Quick Search</h5>
+                    <p class="small mb-0">
+                        Instantly find contacts by name, email, or phone number.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Feature 4 -->
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm h-100 p-3">
+                    <h5 class="fw-bold">Profile Photo & Notes</h5>
+                    <p class="small mb-0">
+                        Attach images and add personal notes for each contact.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Feature 5 -->
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm h-100 p-3">
+                    <h5 class="fw-bold">Cloud Sync & Backup</h5>
+                    <p class="small mb-0">
+                        Access your contacts anywhere with automatic backup.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+ <!-- end of features section -->
+
+<!-- services section -->
+
+<section class="py-5" id="services">
+    <div class="container">
+
+        <div class="text-center mb-4">
+            <h2 class="fw-bold">Our Other Services</h2>
+            <p class="text-muted">
+                Explore more tools and solutions we provide
+            </p>
+        </div>
+
+        <div class="row g-4">
+
+            <!-- Service 1 -->
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body">
+                        <h5 class="fw-bold mb-2">Email Campaign Manager</h5>
+                        <p class="small text-muted mb-3">
+                            Send personalized bulk emails directly to your saved contacts.
+                        </p>
+                        <a href="#" class="btn btn-primary btn-sm">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body">
+                        <h5 class="fw-bold mb-2">Lead Management System</h5>
+                        <p class="small text-muted mb-3">
+                            Track potential clients and convert leads into customers easily.
+                        </p>
+                        <a href="#" class="btn btn-primary btn-sm">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body">
+                        <h5 class="fw-bold mb-2">Team Collaboration Tools</h5>
+                        <p class="small text-muted mb-3">
+                            Share contacts securely with your team and manage access.
+                        </p>
+                        <a href="#" class="btn btn-primary btn-sm">Explore</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 4 -->
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body">
+                        <h5 class="fw-bold mb-2">Reminder & Task Manager</h5>
+                        <p class="small text-muted mb-3">
+                            Set follow-ups and reminders for important contacts & meetings.
+                        </p>
+                        <a href="#" class="btn btn-primary btn-sm">Check Features</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service 5 -->
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body">
+                        <h5 class="fw-bold mb-2">Data Import / Export</h5>
+                        <p class="small text-muted mb-3">
+                            Easily migrate contacts via CSV, Excel, or Google Sync.
+                        </p>
+                        <a href="#" class="btn btn-primary btn-sm">Try Now</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+<!-- end of services section -->
+</body>
+</html>

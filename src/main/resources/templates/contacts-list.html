@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Your Contacts — Smart Contact Manager</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+</head>
+
+<body>
+
+<div class="container mt-4">
+
+    <!-- Page Header -->
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h3>Your Contacts</h3>
+
+        <a th:href="@{/contact-add}" class="btn btn-primary">
+            + Add Contact
+        </a>
+    </div>
+
+    <hr>
+
+    <!-- If user has no contacts -->
+    <div th:if="${#lists.isEmpty(contacts)}" class="alert alert-info text-center">
+        You have not added any contacts yet.
+        <br>
+        <a th:href="@{/contact-add}" class="btn btn-sm btn-success mt-2">
+            Add First Contact
+        </a>
+    </div>
+
+    <!-- Contact List -->
+    <div th:each="c : ${contacts}" class="card shadow-sm mb-3 p-3">
+
+        <div class="row align-items-center">
+
+            <!-- Contact Image -->
+            <div class="col-md-2 text-center">
+                <img th:src="@{'/img/' + ${c.image}}"
+                     class="rounded-circle img-fluid"
+                     style="max-width: 90px;">
+            </div>
+
+            <!-- Contact Details -->
+            <div class="col-md-7">
+
+                <h5 class="mb-1" th:text="${c.name}"></h5>
+
+                <small class="text-muted" th:text="${c.nickname}"></small>
+
+                <p class="mt-2 mb-1">
+                    <strong>Phone :</strong>
+                    <span th:text="${c.phoneno}"></span><br>
+
+                    <strong>Work :</strong>
+                    <span th:text="${c.work}"></span>
+                </p>
+
+                <p class="mb-0" th:text="${c.description}"></p>
+
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="col-md-3 text-right">
+
+                <a th:href="@{'/contact/view/' + ${c.id}}"
+                   class="btn btn-info btn-sm mb-1">
+                    View
+                </a>
+
+                <a th:href="@{'/contact-update/' + ${c.id}}"
+                   class="btn btn-warning btn-sm mb-1">
+                    Edit
+                </a>
+
+
+                <a th:href="@{'/contact-delete/' + ${c.id}}"
+                   class="btn btn-danger btn-sm mb-1"
+                   onclick="return confirm('Delete this contact?');">
+                    Delete
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

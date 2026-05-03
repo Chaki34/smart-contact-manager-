@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Contact</title>
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+</head>
+<body>
+
+<div class="container mt-4">
+    <a th:href="@{/dashboard}" class="btn btn-success btn-blue">
+        Go to Dashboard
+    </a>
+    <h3 class="text-center mb-4">Add New Contact</h3>
+
+    <!-- Success / Error message -->
+    <div th:if="${success}" class="alert alert-success" th:text="${success}"></div>
+    <div th:if="${error}" class="alert alert-danger" th:text="${error}"></div>
+
+    <form th:action="@{/contact-save}"
+          th:object="${contact}"
+          method="post"
+          enctype="multipart/form-data"
+          class="border p-4 rounded shadow">
+
+        <!-- Name & Nickname -->
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>Name</label>
+                <input th:field="*{name}" class="form-control">
+                <small class="text-danger" th:errors="*{name}"></small>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label>Nickname</label>
+                <input th:field="*{nickname}" class="form-control">
+                <small class="text-danger" th:errors="*{nickname}"></small>
+            </div>
+        </div>
+
+        <!-- Work & Phone -->
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>Work</label>
+                <input th:field="*{work}" class="form-control">
+                <small class="text-danger" th:errors="*{work}"></small>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label>Phone Number</label>
+                <input th:field="*{phoneno}" maxlength="10" class="form-control">
+                <small class="text-danger" th:errors="*{phoneno}"></small>
+            </div>
+        </div>
+
+        <!-- Image Upload -->
+        <div class="form-group">
+            <label>Contact Image</label>
+            <input type="file" name="imageFile" class="form-control-file">
+        </div>
+
+        <!-- Description -->
+        <div class="form-group">
+            <label>Description</label>
+            <textarea th:field="*{description}" rows="4" class="form-control"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-success btn-block">
+            Save Contact
+        </button>
+
+    </form>
+
+
+
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard — Smart Contact Manager</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+</head>
+
+<body th:replace="base :: layout(~{::content})">
+
+<!-- ================= Dashboard Content Fragment ================= -->
+<div class="container-fluid" th:fragment="content">
+
+    <div class="row">
+
+        <!-- ================= Sidebar ================= -->
+        <nav class="col-md-3 bg-light py-4 vh-100 d-flex flex-column align-items-stretch">
+
+            <h5 class="text-center mb-3">Contacts</h5>
+
+            <div class="btn-group-vertical btn-block mb-3" role="group">
+
+                <a th:href="@{/contact-list}" class="btn btn-danger btn-block mb-2">
+                    Contact-List
+                </a>
+
+                <!-- Add Contact Button triggers modal -->
+                <a th:href="@{/contact-add}" class="btn btn-primary btn-block mb-2">
+                    Add Contact
+                </a>
+
+
+
+
+
+            <h5 class="text-center mb-3">Tasks</h5>
+
+            <div class="btn-group-vertical btn-block mb-3" role="group">
+                <button type="button" class="btn btn-info btn-block">Task Dashboard</button>
+                <button type="button" class="btn btn-success btn-block">Add Task</button>
+                <button type="button" class="btn btn-info btn-block">Update Task</button>
+                <button type="button" class="btn btn-dark btn-block">Delete Task</button>
+            </div>
+
+
+
+        </nav>
+
+        <!-- ================= Main Content ================= -->
+        <main class="col-md-9 py-4 d-flex flex-column align-items-center">
+
+            <h2 class="mb-4 text-center">Welcome to Your Smart Contact Manager</h2>
+
+            <!-- Success Message -->
+            <div th:if="${successMessage}" class="alert alert-success text-center w-75">
+                <span th:text="${successMessage}"></span>
+            </div>
+
+            <div class="row mt-4 justify-content-center">
+
+                <!-- Total Contacts -->
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="card shadow-sm text-center h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Total Contacts</h5>
+                            <p class="card-text display-4" th:text="${totalContacts} ?: 0">0</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pending Tasks -->
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="card shadow-sm text-center h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Pending Tasks</h5>
+                            <p class="card-text display-4" th:text="${pendingTasks} ?: 0">0</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Profile Status -->
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="card shadow-sm text-center h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Profile Status</h5>
+                            <span class="badge badge-success p-2"
+                                  th:text="${profileStatus} ?: 'Active'">Active</span>
+                        </div>
+                    </div>
+                </div>
+
+                <a th:href="@{/logout}" class="btn btn-outline-danger btn-block mt-auto">
+                    Logout
+                </a>
+
+            </div>
+
+
+
+
+
+
+
+            <!--   add Contact model -->
+
+
+
+        </main>
+
+    </div>
+
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>
